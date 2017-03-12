@@ -2,7 +2,7 @@
 % of _Vs, Vr, A and B_ and plots the sending end and receiving end graphs
 % on a single figure.
 
-%%% Way of giving input
+% Way of giving input
 %
 % All the Values are Comples, so the Sending End and Receiving End Volages
 % should be pre adjusted before giving any input to eliminate the error in
