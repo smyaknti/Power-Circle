@@ -24,33 +24,32 @@ A = input('Enter the A Parameter in (a + bi) form : ');
 B = input('Enter the B Parameter in (a + bi) form : ');     
 %Taking input for the B parameter of the line
 
-%--------------Processing section--------------------
+% Processing section
 
 R = (abs(Vs)*abs(Vr))/abs(B); 
-%Calculation of radius of the Power Circle
+% Calculation of radius of the Power Circle
 CntrR = (abs(A)*abs(Vr)*abs(Vr))/abs(B); 
-%Calculation of the Centre of the power circle
+CntrS = (abs(A)*abs(Vs)*abs(Vs))/abs(B);
+% Calculation of the Centre of the power circle
 
-%-----------------Plotting Section-------------------
+% Plotting Section
 
 th = linspace( 0, 2*pi , 3600);  
-%Threshold of the receiving end power Circle
-x = R*cos(th) + CntrR*cos(angle(B));
-y = R*sin(th) + CntrR*sin(angle(B));
+% Threshold of the receiving end power Circle
+x = R*cos(th) + CntrS*cos(angle(B));
+y = R*sin(th) + CntrS*sin(angle(B));
 plot(x,y,'DisplayName','Sending End Power Circle')
-
+% Plotted the Sending end circle
 hold on 
 x1 = R*cos(th) - CntrR*cos(angle(B));  
- 
 y1 = R*sin(th) - CntrR*sin(angle(B));    
-%Equation of the circle in cartesian form
+% Plotted the Receiving end circle
 plot(x1,y1,'DisplayName','Receiving End Power Circle')
 
-%-----------Plot Formatting Section------------------
-
+% Plot Formatting Section
 legend('show')
-axis equal   %plotting the x,y plot with equal axis ratios
-ax = gca;   %creating the axes
+axis equal   % plotting the x,y plot with equal axis ratios
+ax = gca;   % creating the axes
 ax.XAxisLocation = 'origin';  
 ax.YAxisLocation = 'origin';
 title('Power Circle Diagrams');

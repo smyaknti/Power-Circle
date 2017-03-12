@@ -19,12 +19,12 @@ B = input('Enter the B Parameter in (a + bi) form : ');     %Taking input for th
 
 R = (abs(Vs)*abs(Vr))/abs(B); %Calculation of radius of the Power Circle
 CntrR = (abs(A)*abs(Vr)*abs(Vr))/abs(B); %Calculation of the Modulus Value of the Centre of the power circle
-
+CntrS = (abs(A)*abs(Vs)*abs(Vs))/abs(B); 
 %-----------------------------------Plotting Section--------------------------
 
 th = linspace( 0, 2*pi , 3600);  %Threshold of the receiving end power Circle
-x = R*cos(th) + CntrR*cos(angle(B));
-y = R*sin(th) + CntrR*sin(angle(B));
+x = R*cos(th) + CntrS*cos(angle(B));
+y = R*sin(th) + CntrS*sin(angle(B));
 plot(x,y,'DisplayName','Sending End Power Circle')
 
 hold on 
